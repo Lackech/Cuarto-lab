@@ -57,14 +57,14 @@ int main(int argc, char** argv) {
     //guardar un polinomio con un nombre incorrecto
     try{
         Polinomio poli1("3x(5)y(2)+5.5x(3)y(2)-4.3x(2)y-2xy");
-        mappba.asgPolinomio("op1",poli1);               
+        mappba.asgObjeto("op1",poli1);               
     }catch(ExcMapeoInvalido e){
         cout << e.what() << endl;
     }
     
     //buscar un nombre que no existe
     try{
-        cout << mappba.obtPolinomio("p2").aHil() << endl;
+        cout << mappba.obtObjeto("p2").aHil() << endl;
     }catch(ExcMapeoInvalido e){
         cout << e.what() << endl;
     }
@@ -100,8 +100,8 @@ int main(int argc, char** argv) {
         }
         
         try{        
-            map.asgPolinomio(nombre,poli);    
-            cout << "El polinomio " << nombre << " es: " << map.obtPolinomio(nombre).aHil() << endl;
+            map.asgObjeto(nombre,poli);    
+            cout << "El polinomio " << nombre << " es: " << map.obtObjeto(nombre).aHil() << endl;
         }catch(ExcMapeoInvalido e){
             cout << e.what() << endl;
         }
